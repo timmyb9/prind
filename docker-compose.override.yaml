@@ -12,16 +12,16 @@ x-ustreamer-svc: &ustreamer-svc
     --desired-fps=30
 
 ## Add your personal config here
-services:
-  webcam:
-    <<: *ustreamer-svc
-    devices:
-      - /dev/video0:/dev/webcam
-    labels:
-      org.prind.service: webcam
-      traefik.enable: true
-      traefik.http.services.webcam.loadbalancer.server.port: 8080
-      traefik.http.routers.webcam.rule: PathPrefix(`/webcam`)
-      traefik.http.routers.webcam.entrypoints: web
-      traefik.http.middlewares.webcam.stripprefix.prefixes: /webcam
-      traefik.http.routers.webcam.middlewares: webcam
+#services:
+#  webcam:
+#    <<: *ustreamer-svc
+#    devices:
+#      - /dev/video0:/dev/webcam
+#    labels:
+#      org.prind.service: webcam
+#      traefik.enable: true
+#      traefik.http.services.webcam.loadbalancer.server.port: 8080
+#      traefik.http.routers.webcam.rule: PathPrefix(`/webcam`)
+#      traefik.http.routers.webcam.entrypoints: web
+#      traefik.http.middlewares.webcam.stripprefix.prefixes: /webcam
+#      traefik.http.routers.webcam.middlewares: webcam
